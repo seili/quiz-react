@@ -1,0 +1,19 @@
+type Quiz @model {
+  # ! means non-null GraphQL fields are allowed to be null by default
+  id: ID!
+  name: String!
+  theme: String!
+  questionsList: [Question]!
+}
+
+type Question @model {
+  id: ID!
+  text: String!
+  type: String
+  image: String
+  choices: [String]!
+  answers: [Int]!
+  # points could be an additional feature, we will use a default value for the moment
+  points: Int
+  explanation: String
+}
