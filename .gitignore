@@ -166,3 +166,7 @@ amplifyconfiguration.json
 amplify-build-config.json
 amplify-gradle-config.json
 amplifyxc.config
+storybook-static/sb_dll/storybook_ui-manifest.json
+storybook-static/sb_dll/storybook_ui_dll.LICENCE
+storybook-static/sb_dll/storybook_ui_dll.js
+storybook-static/favicon.ico

@@ -7,19 +7,26 @@
     "test": "jest",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@storybook/react": "^5.3.18",
     "@types/node": "^13.13.5",
     "@types/react-dom": "^16.9.7",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.1.0",
     "eslint": "^7.0.0",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
+    "react-docgen-typescript-loader": "^3.7.2",
     "typescript": "^3.8.3"
   },
   "dependencies": {
@@ -28,6 +35,8 @@
     "nanoid": "^3.1.6",
     "next": "^9.3.6",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "@aws-amplify/api": "3.1.9",
+    "@aws-amplify/api-graphql": "1.0.11"
   }
 }
