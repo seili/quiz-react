@@ -7,6 +7,10 @@ import config from "../src/aws-exports.js"
 import {listQuizs, listQuestions} from "../src/graphql/queries" 
 import { nanoid } from "nanoid"
 import { createQuestion } from "../src/graphql/mutations"
+import quiz from "../src/constants/quiz";
+import questionsList from "../src/components/questionsList/questionsList";
+import Questions from "../src/components/questionsList/questionsList";
+
 
 
 API.configure(config);
@@ -21,6 +25,11 @@ class App extends React.Component {
     this.state = {
       data: null,
     };
+    this.state = {
+      evolution: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
  
   fetchQuizzes = async () => {
@@ -58,20 +67,50 @@ class App extends React.Component {
 
   }
 
+  
   async componentDidMount() {
     this.fetchQuizzes();
   }
+
+  handleChange(event) {
+    this.setState({
+      evolution: event.target.value
+    });
+  }
+  
+  handleSubmit(event) {
+    event.preventDefault();
+    
+    alert(`You chose ${this.state.evolution} .`);
+  }
+
   
   render(){
+    console.log(quiz);
     return (
       <>
         <header>
-          <h2>To Do List</h2>
+          <h2>Give the right answer</h2>
         </header>
-        <main>Ilies</main>
+        <main>
+          {quiz.map((list) => (
+           <div>
+            <a className="question" key={list.id}>{list.question}</a>
+            {list.choices.map((choice) => (
+             <li className="choices"><input type="radio" 
+                                            value={choice} 
+                                            name="Choix"
+                                            checked ={this.state.evolution === {choice}}
+                                            onChange={this.handleChange}/>{choice}</li>
+             ))}
+           </div>
+          ))}
+           <div className="control">
+            <button type="submit" className="button is-primary">Submit</button>
+           </div>
+        </main>
       </>
     );
-
   } 
 };
 
