@@ -31,13 +31,13 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@aws-amplify/api": "3.1.9",
+    "@aws-amplify/api-graphql": "1.0.11",
     "bulma": "^0.8.2",
     "immer": "^6.0.5",
     "nanoid": "^3.1.6",
     "next": "^9.3.6",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "@aws-amplify/api": "3.1.9",
-    "@aws-amplify/api-graphql": "1.0.11"
+    "react-dom": "^16.13.1"
   }
 }

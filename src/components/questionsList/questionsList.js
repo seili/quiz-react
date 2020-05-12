@@ -19,6 +19,23 @@ const Questions = ({ id,question, choices }) => (
   </main>
 );
 
+
+
+/**
+ <div>
+            <a className="question" key={list.id}>{list.question}</a>
+            {list.choices.map((choice) => (
+             <li className="choices"><input type="radio" 
+                                            value={choice} 
+                                            name="Choix"/>{choice}</li>
+             ))}
+           </div>
+          ))}
+           <div className="control">
+            <button type="submit" className="button is-primary">Submit</button>
+           </div>
+ */
+
 Questions.propTypes = {
 	question: PropTypes.string.isRequired,
 	choices: PropTypes.string.isRequired,
