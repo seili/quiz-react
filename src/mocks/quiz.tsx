@@ -7,45 +7,13 @@ const quizList = [
       {
         id: 1,
         text: 'En quoi évolue Pikachu ?',
-        choices: [
-          {
-            id: 1,
-            value: 'Raichu',
-            isCheked: false
-          }, 
-          {
-            id: 2,
-            value: 'Voltali',
-            isCheked: false
-          },
-          { 
-            id: 3,
-            value: 'Ratatac',
-            isCheked: false
-          },
-        ],
+        choices: ['Raichu', 'Voltali', 'Ratatac'],
         answers: [1],
       },
       {
         id: 2,
         text: 'En quoi évolue Evoli ?',
-        choices: [
-          {
-            id: 1,
-            value: 'Bulbi',
-            isCheked: false
-          }, 
-          {
-            id : 2,
-            value: 'Voltali',
-            isCheked: false
-          },
-          { 
-            id: 3,
-            value: 'Ratatac',
-            isCheked: false
-          },
-        ],
+        choices: ['Bulbi', 'Voltali', 'Ratatac'],
         answers: [2],
       },
     ],
@@ -59,44 +27,16 @@ const quizList = [
         id: 3,
         text: "Comment passe ton des données d'un composant à un autre?",
         choices: [
-          {
-            id: 1,
-            value: 'Via les props',
-            isCheked: false
-          }, 
-          {
-            id: 2,
-            value: 'On peut passer des données ?',
-            isCheked: false
-          },
-          { 
-            id: 3,
-            value: 'Via le state',
-            isCheked: false
-          },
+          'Via les props',
+          'On peut passer des données ?',
+          'Via le state',
         ],
         answers: [1],
       },
       {
         id: 4,
         text: "Peux-tu me citer d'autres frameworks ou librairies front ?",
-        choices: [
-          {
-            id: 1,
-            value: 'Svelte',
-            isCheked: false
-          }, 
-          {
-            id: 2,
-            value: 'Vue',
-            isCheked: false
-          },
-          { 
-            id: 3,
-            value: 'Angular',
-            isCheked: false
-          },
-        ],
+        choices: ['Svelte', 'Vue', 'Angular'],
         answers: [1, 2, 3],
       },
     ],
@@ -109,23 +49,7 @@ const quizList = [
       {
         id: 5,
         text: 'En quoi évolue A ?',
-        choices: [
-          {
-            id: 1,
-            value: 'B',
-            isCheked: false
-          }, 
-          {
-            id: 2,
-            value: 'C',
-            isCheked: false
-          },
-          { 
-            id: 3,
-            value: 'D',
-            isCheked: false
-          },
-        ],
+        choices: ['B', 'C', 'D'],
         answers: [1],
       },
     ],
