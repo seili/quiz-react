@@ -22,32 +22,31 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <section className="hero">
+        <section className="hero is-info">
           <div className="hero-body">
             <div className="container">
-              <h1 className="title">Awesome Quiz !!!</h1>
-              <h2 className="subtitle">done by Ilies Djedou with love</h2>
+              <h1 className="title"> Awesome Quiz !!! </h1>
+              <h2 className="subtitle"> done by Ilies Djedou with love </h2>
             </div>
           </div>
-        </section>
+        </section>        
         <main>
-          {quizList.map((quiz) => (
-            <div className="card">
-              <div className="card-content">
-                <p className="title">{quiz.name}</p>
-                <p className="subtitle">{quiz.questionsList.length} </p>
-              </div>
-              <footer className="card-footer">
-                <p className="card-footer-item">
-                  <span>
-                    <Link href="/quiz/[id]" as={`/quiz/${quiz.id}`}>
-                      <a>C'est parti !!! </a>
-                    </Link>
-                  </span>
-                </p>
-              </footer>
-            </div>
-          ))}
+        {quizList.map((quiz) => (
+        <div className="tile is-ancestor" key={quiz.id}>
+          <div className="tile is-vertical is-8">
+            <div className="tile">
+               <div className="tile is-parent is-vertical">
+                 <article className="tile is-child notification is-warning">
+                    <p className="title">{quiz.name}</p>
+                    <p className="subtitle">
+                       <span><Link href="/quiz/[id]" as={`/quiz/${quiz.id}`}><a className="button is-info">C'est parti</a></Link></span>
+                    </p>
+                 </article>
+               </div>
+               </div>
+          </div>
+        </div>
+        ))}
         </main>
       </>
     );

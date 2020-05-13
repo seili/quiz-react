@@ -14,6 +14,7 @@ export interface QuizProps {
 export interface QuizState {
     id: any;
     quiz: any;
+    choose: any;
 }
 
 class Quiz extends Component<QuizProps, QuizState> {
@@ -21,8 +22,10 @@ class Quiz extends Component<QuizProps, QuizState> {
     super(props);
     this.state = {
         id:  props.router.query.id,
-        quiz: null 
+        quiz: null,
+        choose: null
     };
+    
   }
 
   async componentDidMount() {
@@ -40,18 +43,37 @@ class Quiz extends Component<QuizProps, QuizState> {
     })
     //fetchQuizzes();
   }
+  
+  handleInputChange(event) {
+    const target = event.target;
+    const choose = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+  }
 
   render() {
       console.log("quiz when rendered: ", this.state.quiz);
       console.log("state id when rendered: ", this.state.id); 
+      console.log("checked :", this.state.choose);
+      
     return (
         <>
         {this.state.quiz && this.state.quiz.questionsList.map((question) => (
-            <div className="card">
+            <div className="card" key={question.id}>
               <div className="card-content">
                 <p className="title">
                   { question.text }
                 </p>
+                {question.choices.map((choice,i) => (
+                <ul key={i}>
+                  <li className="choose">
+                    <input className="choice"
+                          type="checkbox"
+                          checked={this.state.choose}
+                          onChange={this.handleInputChange} /> { choice.value }
+                  </li>
+                </ul>
+                ))}
           <p className="subtitle"> </p> 
               </div>
               <footer className="card-footer">
