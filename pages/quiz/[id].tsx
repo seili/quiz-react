@@ -22,6 +22,7 @@ export interface QuizState {
     id: any;
     quiz: any;
     userInputs: Array<UserChoice>;
+    score: any;
 }
 
 class Quiz extends Component<QuizProps, QuizState> {
@@ -30,9 +31,9 @@ class Quiz extends Component<QuizProps, QuizState> {
     this.state = {
         id:  props.router.query.id,
         quiz: null,
-        userInputs: new Array<UserChoice>()
+        userInputs: new Array<UserChoice>(),
+        score: null,
     };
-    
   }
 
   async componentDidMount() {
@@ -94,6 +95,38 @@ class Quiz extends Component<QuizProps, QuizState> {
 
   }
 
+  handleSubmit() {
+    //userInputs is full, let's compare it with the answer of questionList array
+    /**
+     * userInputs = [{idQuestion: 1, choices: [1, 2]}, {idQuestion: 2, choices: [0]}]
+     * questionList = [{id: 1, answers: [1, 2]}, {id: 2, answers: [1]}]
+     *  
+     * 1/2 (une bonne réponse, une mauvaise)
+     * 
+     */
+    let totalQuestions = this.state.quiz.questionsList.length
+    let numberOfCorrectAnswers = 0
+    let answerList;
+    for (let i = 0; i < totalQuestions; i++) {
+        let question = this.state.quiz.questionsList[i];
+        for (let j = 0; j < this.state.userInputs.length; j++) {
+          if(question.id === this.state.userInputs[j].idQuestion){
+             if(Utils.compareArrays(question.answers,this.state.userInputs[j].choices)) 
+              numberOfCorrectAnswers++
+          }
+        }
+    } 
+
+    this.setState({
+      score: `${numberOfCorrectAnswers}/${totalQuestions}`
+    })
+
+
+      
+    }
+
+  
+
   render() {    
     return (
         <>
@@ -112,16 +145,19 @@ class Quiz extends Component<QuizProps, QuizState> {
                   </li>
                 </ul>
                 ))}
-          <p className="subtitle"> </p> 
               </div>
-              <footer className="card-footer">
-                <p className="card-footer-item">
-                  <span>
-                  </span>
-                </p>
-              </footer>
             </div>
           ))}
+              <footer className="card-footer">
+                <p className="card-footer-item">
+                  <span><button className="btn btn-info" onClick = {() => this.handleSubmit()}>Valider</button>
+                  {this.state.score &&  (
+                    <a className="result">  You have a {this.state.score} score</a>
+                  )}
+                  </span>
+                  
+                </p>
+              </footer>
           </>
     );
   }

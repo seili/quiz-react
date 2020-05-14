@@ -4,6 +4,10 @@ class Utils{
             return arr1.indexOf(item) === -1;
         }));
     }
+
+    static compareArrays = (arr1: Array<any>, arr2:Array<any>): boolean => 
+        arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index])
+
 }
 
 export default Utils;

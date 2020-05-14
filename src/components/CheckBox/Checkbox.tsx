@@ -7,5 +7,3 @@ export const CheckBox = props => {
       </li>
     )
 }
-
-export default CheckBox
