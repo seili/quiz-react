@@ -54,10 +54,10 @@ class Quiz extends Component<QuizProps, QuizState> {
     let newArray = [...this.state.userInputs]
     const tempUserChoice : UserChoice = {
       idQuestion: questionId,
-      choices: [Number(index)] // why an array ? could be a unique element
+      choices: [Number(index)]
     }
 
-    if(event.target.checked === true){ // I checked a bix
+    if(event.target.checked === true){ // I check a box
         let addedElement = false
         /**
          * If exist in array, I merge, otherwise I push
@@ -71,7 +71,7 @@ class Quiz extends Component<QuizProps, QuizState> {
         if(addedElement === false){
           newArray.push(tempUserChoice);
         }
-    }else{ // I unchecked a box
+    }else{ // I uncheck a box
     /**
      * I remove the existing element if exist
      */
@@ -81,11 +81,9 @@ class Quiz extends Component<QuizProps, QuizState> {
              newArray.splice(i, 1);
           }else{
             //remove the element in  newArray[i].choices 
-            for( let j = 0; j < newArray[i].choices.length; j++){
-              if ( newArray[i].choices[j] === tempUserChoice.choices[0]) {
-                newArray[i].choices.splice(i, 1); 
-              }
-             }
+            let elementToRemove = newArray[i].choices.indexOf(tempUserChoice.choices[0])
+            if(elementToRemove > -1)
+              newArray[i].choices.splice(elementToRemove, 1); 
           }
         }
       }
