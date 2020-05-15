@@ -61,14 +61,26 @@ const quizList = [
   },
   {
     id: 3,
-    name: "Connais tu bien l'univers digimon ?",
-    theme: 'digimon',
+    name: "Connaissez-vous bien le monde du MCU ?",
+    theme: 'films',
     questionsList: [
       {
         id: 5,
-        text: 'En quoi évolue A ?',
-        choices: ['B', 'C', 'D'],
-        answers: [1],
+        text: 'OÙ IRON MAN A CRÉÉ SA PREMIÈRE ARMURE ?',
+        choices: ['Dans sa maison', 'Dans le laboratoire de Stark Industries', 'Dans une grotte afghane'],
+        answers: [2],
+      },
+      {
+        id: 6,
+        text: 'DE QUEL OBJET STAR-LORD NE SE SÉPARE T-IL JAMAIS ?',
+        choices: ['Son casque', 'Son pendentif dent de requin', 'Son Walkman'],
+        answers: [2],
+      },
+      {
+        id: 7,
+        text: 'OÙ SE DÉROULE LA COURSE DE FORMULE 1 DANS IRON MAN 2 ?',
+        choices: ['Miami', 'Rome', 'Monaco'],
+        answers: [2],
       },
     ],
   },
