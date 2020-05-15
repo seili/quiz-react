@@ -2,6 +2,7 @@
 import React from 'react';
 import { CheckBox } from '../src/components/CheckBox/Checkbox';
 import renderer from 'react-test-renderer'; 
+import regeneratorRuntime from "regenerator-runtime";
 
 test('Link changes the class when hovered', () => {
   const component = renderer.create(

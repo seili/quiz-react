@@ -22,24 +22,36 @@ class App extends React.Component {
   render() {
     return (
       <>
+      <div className="container">
+      <div className="notification">
+        <div className="column is-centered">
+        <div className="content has-text-centered">
         <section className="hero is-info">
           <div className="hero-body">
-            <div className="container">
-              <h1 className="title"> Awesome Quiz !!! </h1>
+              <h1 className="title" > Awesome Quiz !!! </h1>
               <h2 className="subtitle"> done by Ilies Djedou with love </h2>
-            </div>
           </div>
-        </section>        
+        </section> 
+        </div>       
+        </div>
         <main>
         {quizList.map((quiz) => (
-        <div className="tile is-ancestor" key={quiz.id}>
-          <div className="tile is-vertical is-8">
+        <div className="tile is-ancestor is-centered" key={quiz.id}>
+          <div className="tile is-vertical is-6">
             <div className="tile">
                <div className="tile is-parent is-vertical">
-                 <article className="tile is-child notification is-warning">
-                    <p className="title">{quiz.name}</p>
+                 <article className="tile is-child notification is-info">
+                    <p className="title"></p>
                     <p className="subtitle">
-                       <span><Link href="/quiz/[id]" as={`/quiz/${quiz.id}`}><a className="button is-info">C'est parti</a></Link></span>
+                       <span><Link href="/quiz/[id]" as={`/quiz/${quiz.id}`}>
+                                <button className="button is-large is-fullwidth">
+                                  <span className="icon has-text-success">
+                                   <i className="fas fa-check-square"></i>
+                                  </span>
+                                  <span>{quiz.name}</span>
+                                </button>
+                              </Link> 
+                       </span>
                     </p>
                  </article>
                </div>
@@ -48,6 +60,8 @@ class App extends React.Component {
         </div>
         ))}
         </main>
+        </div>
+        </div>
       </>
     );
   }

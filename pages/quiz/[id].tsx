@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-import { withRouter } from 'next/router'
+import { withRouter } from 'next/router';
 import Link from 'next/link';
 
 import { fetchQuizzes } from '../../src/DataOperations';
 
 import quizList from '../../src/mocks/quiz';
 
-import Utils from '../../src/helpers/utils'
+import Utils from '../../src/helpers/utils';
 
 type UserChoice = {
   idQuestion: number,
@@ -130,6 +130,9 @@ class Quiz extends Component<QuizProps, QuizState> {
   render() {    
     return (
         <>
+        
+    <div className="container">
+      <div className="notification">
         {this.state.quiz && this.state.quiz.questionsList.map((question) => (
             <div className="card" key={question.id}>
               <div className="card-content">
@@ -158,6 +161,8 @@ class Quiz extends Component<QuizProps, QuizState> {
                   
                 </p>
               </footer>
+        </div>
+      </div>
           </>
     );
   }
