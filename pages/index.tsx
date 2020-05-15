@@ -45,9 +45,6 @@ class App extends React.Component {
                     <p className="subtitle">
                        <span><Link href="/quiz/[id]" as={`/quiz/${quiz.id}`}>
                                 <button className="button is-large is-fullwidth">
-                                  <span className="icon has-text-success">
-                                   <i className="fas fa-check-square"></i>
-                                  </span>
                                   <span>{quiz.name}</span>
                                 </button>
                               </Link> 

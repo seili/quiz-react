@@ -16,11 +16,29 @@ const quizList = [
         choices: ['Bulbi', 'Voltali', 'Aquali'],
         answers: [1, 2],
       },
+      {
+        id: 3,
+        text: 'En quoi évolue Draco ?',
+        choices: ['Dracofeu', 'Drattak', 'Dracolosse'],
+        answers: [2],
+      },
+      {
+        id: 4,
+        text: 'En quoi évolu le Pokémon préféré de sacha ?',
+        choices: ['Rattatac', 'Empiflor', 'Raichu'],
+        answers: [2],
+      },
+      {
+        id: 5,
+        text: 'Qui évolue en Dracaufeu ?',
+        choices: ['Salamèche', 'Reptincel'],
+        answers: [0],
+      },
     ],
   },
   {
     id: 2,
-    name: "React c'est ouf !!!",
+    name: "Connais tu la librairie React ?",
     theme: 'react',
     questionsList: [
       {

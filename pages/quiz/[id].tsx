@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-import { withRouter } from 'next/router';
+import { withRouter,Router } from 'next/router';
 import Link from 'next/link';
 
 import { fetchQuizzes } from '../../src/DataOperations';
@@ -9,6 +9,7 @@ import { fetchQuizzes } from '../../src/DataOperations';
 import quizList from '../../src/mocks/quiz';
 
 import Utils from '../../src/helpers/utils';
+
 
 type UserChoice = {
   idQuestion: number,
@@ -121,11 +122,9 @@ class Quiz extends Component<QuizProps, QuizState> {
       score: `${numberOfCorrectAnswers}/${totalQuestions}`
     })
 
-
+    alert(`${numberOfCorrectAnswers} bonne réponses sur ${totalQuestions}!`);
       
     }
-
-  
 
   render() {    
     return (
@@ -153,12 +152,14 @@ class Quiz extends Component<QuizProps, QuizState> {
           ))}
               <footer className="card-footer">
                 <p className="card-footer-item">
-                  <span><button className="btn btn-info" onClick = {() => this.handleSubmit()}>Valider</button>
+                  <span>
+                  <button className="button is-black" onClick = {() => this.handleSubmit()}>Valider</button>
                   {this.state.score &&  (
                     <a className="result">  You have a {this.state.score} score</a>
                   )}
-                  </span>
-                  
+                  </span>&nbsp;&nbsp;&nbsp;
+                  <span>
+                    <button className="button is-black" onClick={() => window.history.back()}>Back</button></span>
                 </p>
               </footer>
         </div>
